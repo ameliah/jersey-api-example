@@ -1,12 +1,14 @@
 package com.jking31cs.jerseyexample;
 
+import javax.inject.Singleton;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFilter;
 import com.jking31cs.jerseyexample.stores.TodoListStore;
+import com.jking31cs.jerseyexample.stores.UserStore;
 
-import javax.inject.Singleton;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
@@ -20,6 +22,7 @@ public class JerseyExampleGuiceModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(TodoListStore.class);
+        bind(UserStore.class);
         bind(ObjectifyFilter.class).in(Singleton.class);
     }
 

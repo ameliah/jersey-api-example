@@ -21,10 +21,15 @@ public class TodoList {
 
     private List<Item> items;
 
+    public TodoList(){
+        this.id = null;
+        this.items = null;
+    }
+
     @JsonCreator
     public TodoList(
-        @JsonProperty("id") Long id,
-        @JsonProperty("items") List<Item> items
+            @JsonProperty("id") Long id,
+            @JsonProperty("items") List<Item> items
     ) {
         this.id = id;
         this.items = items;
@@ -52,7 +57,7 @@ public class TodoList {
         if (o == null || getClass() != o.getClass()) return false;
         TodoList todoList = (TodoList) o;
         return Objects.equals(id, todoList.id) &&
-            Objects.equals(items, todoList.items);
+                Objects.equals(items, todoList.items);
     }
 
     @Override

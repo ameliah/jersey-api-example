@@ -33,7 +33,7 @@ public class UserStore {
     }
 
     public User delete(User user) {
-        objectify.delete().entity(user);
+        objectify.delete().entity(user).now();
         return user;
     }
 }

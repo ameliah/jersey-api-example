@@ -12,6 +12,11 @@ public class Item {
     private boolean done;
     private String message;
 
+    private Item(){
+        this.done = false;
+        this.message = null;
+    }
+
     @JsonCreator
     public Item(
             @JsonProperty("done") boolean done,
@@ -43,7 +48,7 @@ public class Item {
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return Objects.equal(done, item.done) &&
-            Objects.equal(message, item.message);
+                Objects.equal(message, item.message);
     }
 
     @Override
